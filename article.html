@@ -1,0 +1,884 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta charset="utf-8">  
+    <title>文章页</title>
+    <style>
+        .top {
+            width: 1190px;
+            height: 160px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .top_content {
+            position: relative;
+            height: 70px;
+            padding-top: 50px;
+            padding-bottom: 43px;
+            margin: 0 auto;
+        }
+
+        .top_logo {
+            width: 388px;
+            height: 70px;
+            float: left;
+            background: url(images/index01/top_03.png) no-repeat center;
+        }
+
+        .top_words {
+            width: 474px;
+            height: 70px;
+            float: left;
+            background: url(images/index01/top_04.png) no-repeat center;
+        }
+
+        .top_menu {
+            width: 320px;
+            height: 70px;
+            float: left;
+        }
+
+        .top_menu_content {
+            width: 320px;
+            height: 30px;
+            vertical-align: text-top;
+        }
+
+        .search-top {
+            width: 300px;
+            height: 36px;
+        }
+
+        .top .search-top input {
+            float: left;
+            width: 225px;
+            padding-left: 20px;
+            height: 32px;
+            line-height: 34px;
+            border: #64b5e6 1px solid;
+            border-right: 0;
+            border-radius: 34px 0 0 34px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .top .search-top button {
+            float: left;
+            width: 52px;
+            height: 36px;
+            border: #64b5e6 1px solid;
+            border-left: 0;
+            border-radius: 0 34px 34px 0;
+            background: url(images/index01/search_03.png) center center no-repeat;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .patient {
+            width: 80px;
+            vertical-align: text-top;
+            font-size: 16px;
+            line-height: 36px;
+            color: #cccccc;
+            float: left;
+        }
+
+        .unclickfont a {
+            width: 80px;
+            vertical-align: text-top;
+            font-size: 16px;
+            line-height: 36px;
+            color: #0085cd;
+            float: left;
+            text-decoration: none;
+        }
+
+        .unclickfont a:hover {
+            text-decoration: underline;
+            color: #f77c4c;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        section {
+            display: block;
+        }
+
+        .nav .wrap {
+            display: flex;
+        }
+
+        .wrap {
+            width: 1180px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            font-size: 16px;
+            color: #ffffff;
+            background: #1d79b7;
+        }
+
+        .nav span {
+            flex-grow: 1;
+            color: #ffffff;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav span a {
+            display: block;
+            color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666666;
+            transition: color 0.25s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #f60;
+            cursor: pointer;
+        }
+
+        .nav span p {
+            display: none;
+            position: absolute;
+            width: 100%;
+            /*隐藏下拉框和菜单栏的距离 */
+            top: 55px;
+            background: #ffffff;
+            font-size: 14px;
+            line-height: 48px;
+            z-index: 999;
+        }
+
+        .nav span p a {
+            color: #666666;
+            border-bottom: #f0f0f0 1px solid;
+            text-decoration: none;
+        }
+
+        .nav span p a:hover {
+            background: #f0f0f0;
+        }
+
+        nav span a:hover {
+            text-decoration: none;
+        }
+
+        .nav span>a:hover {
+            background: #1761a9;
+            text-decoration: none;
+        }
+
+        .nav span.current {
+            background: #1761a9;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        li {
+            font-size: 16px;
+            line-height: 40px;
+            color: #ffffff;
+            float: left;
+            padding: 15px 30px;
+            text-align: center;
+        }
+
+        /* li:hover {
+            background: #1761a9;
+        } */
+
+        .position {
+            height: 70px;
+            background: url(images/index01/bannermenu_bg_06.png) no-repeat center;
+        }
+
+        .banner {
+            height: 320px;
+            margin: 0 auto;
+            background: url(images/news/banner_bg_02.png) no-repeat center;
+        }
+
+        .banner_empty {
+            width: 29%;
+            height: 320px;
+            float: left;
+        }
+
+        .banner_text {
+            width: 71%;
+            height: 190px;
+            padding-top: 130px;
+            font-size: 36px;
+            line-height: 36px;
+            color: #0085cd;
+            float: left;
+        }
+
+        .span_banner {
+            font-size: 18px;
+            line-height: 37px;
+            color: #666666;
+        }
+
+        .current_position {
+            width: 1210px;
+            height: 34px;
+            padding-top: 25px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #999999;
+            margin: 0 auto;
+            border-bottom: 1px solid #999999;
+        }
+
+        .span_arrow {
+            color: #cccccc;
+        }
+
+        .span_position {
+            color: #0085cd;
+        }
+
+        .article {
+            width: 1180px;
+            margin: 0 auto;
+        }
+
+        .article_text {
+            font-size: 16px;
+            line-height: 30px;
+            color: #333333;
+            text-indent: 32px;
+        }
+
+        .article_title {
+            width: 1180px;
+            height: 56px;
+            padding-top: 50px;
+            font-size: 24px;
+            line-height: 30px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .article_source {
+            width: 1180px;
+            height: 82px;
+            font-size: 14px;
+            height: 30px;
+            color: #999999;
+        }
+
+        .article_source_text {
+            width: 780px;
+            height: 82px;
+            float: left;
+            text-align: right;
+            font-size: 14px;
+            line-height: 30px;
+            color: #999999;
+        }
+
+        .article_source_logo {
+            width: 200px;
+            margin-left: 200px;
+            float: left;
+            font-size: 16px;
+            height: 82px;
+            color: #999999;
+        }
+
+        .article_p1 {
+            width: 1180px;
+            height: 550px;
+        }
+
+        .picture {
+            width: 800px;
+            height: 525px;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .picture1 {
+            width: 800px;
+            height: 480px;
+            background: url(images/article/images_13.png) no-repeat center;
+            margin: 0 auto;
+        }
+
+        .picture_introduce {
+            margin-top: 15px;
+            width: 800px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #666666;
+            vertical-align: text-bottom;
+            text-align: center;
+        }
+
+        .article_p2 {
+            width: 1180px;
+            height: 340px;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .share {
+            width: 1140px;
+            padding-left: 40px;
+            font-size: 16px;
+            line-height: 32px;
+            height: 32px;
+            color: #999999;
+            margin: 0 auto;
+        }
+
+        /* .return {
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1180px;
+            height: 60px;
+            background: url(images/article/images_17.png) no-repeat center;
+            text-align: center;
+            font-size: 16px;
+            line-height: 60px;
+            color: #ffffff;
+            vertical-align: middle;
+        } */
+
+        .return {
+            margin-top: 40px;
+            width: 1180px;
+            height: 60px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .return a {
+            display: block;
+            font-size: 16px;
+            text-align: center;
+            line-height: 60px;
+            height: 60px;
+            color: white;
+            background: #0085cd;
+            border-radius: 60px;
+        }
+
+        .return a:hover {
+            background: #f77c4c;
+            text-decoration: none;
+        }
+
+        .youlike {
+            margin-top: 50px;
+            width: 1180px;
+            height: 230px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .youlike_name {
+            font-size: 24px;
+            line-height: 48px;
+            width: 1180px;
+            height: 48px;
+            vertical-align: middle;
+            margin: 0 auto;
+        }
+
+        .youlike_content {
+            width: 1180px;
+            height: 182px;
+            margin: 0 auto;
+        }
+
+        .youlike_content_1 {
+            width: 280px;
+            height: 182px;
+            float: left;
+        }
+
+        .youlike_content_img1 {
+            width: 280px;
+            height: 157px;
+            background: url(images/article/images_19.png) no-repeat;
+        }
+
+        .youlike_content_detail {
+            width: 280px;
+            height: 25px;
+            font-size: 14px;
+            line-height: 48px;
+            color: #666666;
+        }
+
+        .youlike_content_2 {
+            width: 280px;
+            height: 182px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .youlike_content_img2 {
+            width: 280px;
+            height: 157px;
+            background: url(images/article/images_21.png) no-repeat;
+        }
+
+        .youlike_content_img3 {
+            width: 280px;
+            height: 157px;
+            background: url(images/article/images_23.png) no-repeat;
+        }
+
+        .youlike_content_img4 {
+            width: 280px;
+            height: 157px;
+            background: url(images/article/images_25.png) no-repeat;
+        }
+
+        .threetop {
+            margin-top: 30px;
+            width: 1180px;
+            height: 110px;
+            background: url(images/article/threetop_bg_07.png) no-repeat center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .threetop_left {
+            width: 43%;
+            height: 110px;
+            float: left;
+        }
+
+        .threetop_right {
+            width: 48%;
+            height: 110px;
+            float: left;
+        }
+
+        .threetop_right_name {
+            width: 430px;
+            height: 40px;
+            font-size: 36px;
+            line-height: 24px;
+            color: #ffffff;
+            padding-top: 20px;
+        }
+
+        .column {
+            color: #fff5a3;
+        }
+
+        .threetop_right_introduce {
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .footer {
+            margin: 0 auto;
+            height: 250px;
+            background: url(images/index01/footer_bg_02.png) no-repeat center;
+        }
+
+        .footer_content {
+            width: 1180px;
+            height: 160px;
+            padding-top: 50px;
+            margin: 60px auto;
+        }
+
+        .footer_logo {
+            float: left;
+            margin-right: 100px;
+        }
+
+        .footer_logo_img {
+            width: 400px;
+            height: 95px;
+        }
+
+        .footer_logo_text {
+            width: 400px;
+            height: 105px;
+            font-size: 12px;
+            line-height: 24px;
+            color: #cfe3f0;
+            text-align: center;
+            vertical-align: text-top;
+        }
+
+        .footer_information {
+            float: left;
+            width: 280px;
+            height: 250px;
+        }
+
+        .footer_information_address {
+            height: 70px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #ffffff;
+            float: left;
+        }
+
+        .footer_information_address a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .footer_information_address a:hover {
+            color: #f77c4c;
+            text-decoration: underline;
+        }
+
+        .address_logo {
+            width: 35px;
+            height: 50px;
+            float: left;
+        }
+
+        .address_text {
+            width: 165px;
+            height: 70px;
+            float: left;
+        }
+
+        .tel_logo {
+            width: 35px;
+            height: 50px;
+            float: left;
+        }
+
+        .tel_text {
+            height: 70px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #ffffff;
+            float: left;
+        }
+
+        .footer_information_tel {
+            height: 70px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #ffffff;
+            float: left;
+            margin-top: 35px;
+        }
+
+        .tel {
+            font-size: 24px;
+            line-height: 24px;
+            color: #ffffff;
+
+        }
+
+        .footer_reserve {
+            width: 130px;
+            height: 160px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #ffffff;
+            margin-left: 100px;
+            float: left;
+            text-align: center;
+        }
+
+        .footer_service {
+            width: 130px;
+            height: 160px;
+            font-size: 14px;
+            line-height: 24px;
+            margin-left: 40px;
+            float: left;
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="css/swiper-4.3.3.min.css">
+    <base target="_blank">
+</head>
+
+<body>
+    <div class="top">
+        <div class="top_content">
+            <div class="top_logo"></div>
+            <div class="top_words"></div>
+            <div class="top_menu">
+                <div class="top_menu_content">
+                    <div class="unclickfont">
+                        <a href="#">患者服务</a>
+                    </div>
+                    <div class="unclickfont">
+                        <a href="#">医院资讯</a>
+                    </div>
+                    <div class="unclickfont">
+                        <a href="#">三甲工作</a>
+                    </div>
+                    <div class="unclickfont">
+                        <a href="#">OA系统</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="search-top">
+                    <p>
+                        <form>
+                            <input type="text" value="" placeholder="" name="" />
+                            <button></button>
+                        </form>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="nav">
+        <div class="wrap">
+            <span class>
+                <a href="#">首页</a>
+            </span>
+            <span class>
+                <a href="#">预约挂号</a>
+            </span>
+            <span>特色医疗
+                <p style="display:none;">
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                </p>
+            </span>
+            <span>就医指南
+                <p style="display:none;">
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                </p>
+            </span>
+            <span>专家一览
+                <p style="display:none;">
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                </p>
+            </span>
+            <span class>
+                <a href="#">科室导航</a>
+            </span>
+            <span>医院新闻
+                <p style="display:none;">
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                </p>
+            </span>
+            <span>健康科普
+                <p style="display:none;">
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                </p>
+            </span>
+            <span>患意度调查
+                <p style="display:none;">
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                    <a href="#">预约挂号</a>
+                </p>
+            </span>
+        </div>
+    </section>
+
+    <div class="banner">
+        <div class="banner_empty"></div>
+        <div class="banner_text">医院新闻</br>
+            <span class="span_banner">关注广医五院最新动态</span>
+        </div>
+    </div>
+    <div class="current_position">您的位置：首页
+        <span class="span_arrow">></span>
+        <span class="span_position">医院新闻</span>
+    </div>
+    <div class="article">
+        <div class="article_title">提升志愿者服务能力 打造医院靓丽新名片</div>
+        <div class="article_source">
+            <div class="article_source_text">2018-01-07 08:53 编辑：团委廖剑锋 阅读次数：23847</div>
+            <div class="article_source_logo">分享：
+                <a href="#"> <img src="images/article/images_03.png"></a>&nbsp;&nbsp;&nbsp;
+                <a href="#"><img src="images/article/images_05.png"></a>&nbsp;&nbsp;&nbsp;
+                <a href="#"><img src="images/article/images_07.png"></a>
+            </div>
+        </div>
+        <div class="article_p1">
+            <p class="article_text">广医五院临床教学综合大楼搬迁在即，为全力配合医院搬迁工作顺利进行，确保搬迁后医疗秩序的有序进行，给患者提供更加优质、高效的就医流程，2018年7月7日上午，在新大楼正式搬迁前，医院团委举办导诊志愿者专题培训活动，组织扩容后的导诊志愿者队伍开展志愿者专题培训，以便导诊志愿者能够更好的配合医院工作、严明导诊服务队纪律，提升导诊志愿服务队的服务能力与服务技巧，进一步熟悉新大楼的布局以及相关自助终端的使用。此次活动特邀请中国志愿服务专业导师授课。</p>
+            <p class="article_text">中国志愿服务中级培训师甘荣通老师、我院党委周如建书记，客服中心、门诊部、导诊志愿服务队等相关职能部门及志愿者出席活动。培训活动由医院团委朱艳妮书记主持。</p>
+            <p class="article_text">周如建书记在会上致辞。他向各位来宾的到来表示热烈欢迎并具体介绍了医院的发展情况，对广大志愿者对医院发展做出的巨大贡献表示深深的感谢。同时，希望大家以新大楼搬迁为契机，通过此次志愿者专题培训进一步丰富医院内涵建设和为了医院的战略腾飞、走在前列做出更大的贡献。</p>
+            <p class="article_text">甘荣通老师为广大志愿者做了《志愿者精神和有效沟通》的专题培训。他全面而详细地向大家诠释了志愿者精神的本质就是一种互助、不求回报的精神，它提倡“互相帮助、助人自助、无私奉献、不求回报”。其核心观念就是服务、团结的理想与信念。同时，甘荣通老师通过翔实的案例向大家介绍了志愿者活动有效沟通的技巧和重要性。</p>
+            <p class="article_text">随后，导诊志愿服务队梁海霞队长以《不忘初心，志愿坚持》为题，向大家详细介绍了医院导诊志愿者服务队的发展历程、日常工作内容、所获荣誉等。为了进一步让志愿者们熟悉新住院大楼的布局以及相关自助终端的使用，门诊黎瑞仪护士长给大家带来了《新住院大楼场地介绍》的专题报告，详细介绍了门诊部的特点及主要任务、门诊分布情况、志愿者礼仪规范、对志愿者的职责要求和注意事项等内容。接着，客服中心匡丽霞组长向大家现场实操讲解医院微信公众号、网上预约挂号、自助终端机的使用等内容。最后，黎瑞仪护士长与客服中心匡丽霞组长带领大家一起实地熟悉新大楼。</p>
+        </div>
+        <div class="picture">
+            <div class="picture1"></div>
+            <div class="picture_introduce">周书记与祖孙三代志愿者合影</div>
+        </div>
+        <div class="article_p2">
+            <p class="article_text">当天，全体志愿者第一次统一穿着印有广医五院志愿者标识的崭新服装，参观布局合理、装修精美、设备齐全、设计新颖的新大楼。志愿者们一边在认真听取黎护士长、匡组长对楼层分布、就诊流程、导诊注意事项等内容的介绍，一边在用笔细心记下导诊志愿服务工作的要点、要求等。志愿者们边走边看，深刻感受到了医院日新月异的快速发展，纷纷表示要以实际行动更好地为医院发展提供有力的志愿服务保障，让患者满意，让社会点赞。</p>
+            <p class="article_text">自2017年5月组建以来，广医五院导诊志愿者服务队在医院党委的正确领导，团委的精心组织，全体队员的共同努力下，从最初只有几个人发展到至今已有导诊志愿者约170人。他们来自四面八方、五湖四海，当中有已退休的老奶奶带着自己的女儿、孙女一齐加入到医院的志愿者服务队伍中来。祖孙三代人无私奉献，将志愿精神与爱永续相传，为医院导诊志愿服务工作树立了典范。</p>
+            <p class="article_text">正如团委朱艳妮书记在会上所说，在这里，他们是医院的一张靓丽的窗口“名片”，言行举止代表着医院的形象。他们的工作涉及引导患者就医，指引患者做各种化验、检查、交费、取药、办理入院手续并护送患者到相应科室或入院治疗等一系列细致的内容。她们通过自己的辛勤劳动，维护了医院的医疗秩序，提高了患者满意度，得到了医院的高度认可与评价。我们坚信医院的志愿者队伍一定会发展的越来越快、越来越好，为医院打造广州东部医疗中心的战略发展贡献力量。</p>
+        </div>
+        <div class="share">分享：
+            <a href="#"> <img src="images/article/images_03.png"></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><img src="images/article/images_05.png"></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><img src="images/article/images_07.png"></a>
+        </div>
+    </div>
+    <div class="return">
+        <a href="#">返回上一级 >></a>
+    </div>
+    <div class="youlike">
+        <div class="youlike_name">猜你喜欢</div>
+        <div class="youlike_content">
+            <div class="youlike_content_1">
+                <a href="#"><div class="youlike_content_img1"></div></a>
+                <div class="youlike_content_detail"><a href="#"> 责任与爱心在线 共筑健康堡垒</a></div>
+            </div>
+            <div class="youlike_content_2">
+                <a href="#"><div class="youlike_content_img2"></div></a>
+                <div class="youlike_content_detail"><a href="#"> 责任与爱心在线 共筑健康堡垒</a></div>
+            </div>
+            <div class="youlike_content_2">
+                <a href="#"><div class="youlike_content_img3"></div></a>
+                <div class="youlike_content_detail"><a href="#"> 责任与爱心在线 共筑健康堡垒</a></div>
+            </div>
+            <div class="youlike_content_2">
+                <a href="#"><div class="youlike_content_img4"></div></a> 
+                <div class="youlike_content_detail"><a href="#"> 责任与爱心在线 共筑健康堡垒</a></div>
+            </div>
+        </div>
+    </div>
+    <a href="#"> <div class="threetop">
+        <div class="threetop_left"></div>
+        <div class="threetop_right">
+            <div class="threetop_right_name">创“三甲”
+                <span class="column">三甲专栏</span>
+            </div>
+            <div class="threetop_right_introduce">以等级评审为抓手 进一步改善医疗服务行动的探索与实践</div>
+        </div>
+    </div></a>
+    <div class="footer">
+        <div class="footer_content">
+            <div class="footer_logo">
+                <div class="footer_logo_img">
+                    <img src="images/index01/footer_logo_10.png">
+                </div>
+                <div class="footer_logo_text">版权所有：广州医科大学附属第五医院（原广州医学院港湾医院）ICP备15000458号 技术支持：39健康网</div>
+            </div>
+            <div class="footer_information">
+                <div class="footer_information_address">
+                    <div class="address_logo">
+                        <img src="images/index01/footer_11.png">
+                    </div>
+                    <div class="address_text">广州市黄埔区港湾路621号</br>
+                        <a href="#"> [ 查看交通线路 ] </a>
+                    </div>
+                </div>
+                <div class="footer_information_tel">
+                    <div class="tel_logo">
+                        <img src="images/index01/footer_15.png">
+                    </div>
+                    <div class="tel_text">预约咨询热线</br>
+                        <span class="tel">020-82285645</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_reserve">
+                <img src="images/index01/footer_03.png">官方服务号</div>
+            <div class="footer_service">
+                <img src="images/index01/footer_05.png">官方订阅号</div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <script src="file:///F:/0/Study/jquery-3.3.1.min.js"></script>
+    <script src="js/swiper-4.3.3.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".nav span").mouseenter(function () {
+                $(this).addClass("current");
+                $(this).find("p").fadeIn();
+            });
+
+            $(".nav span").mouseleave(function () {
+                $(this).removeClass("current");
+                $(this).find("p").fadeOut();
+            });
+
+            var Swiper1 = new Swiper('.banner .swiper-container', {
+                autoHeight: true,
+                observer: true,
+                observeParents: true,
+                autoplay: true,
+                pagination: {
+                    el: '.banner .swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            var Swiper2 = new Swiper('.picture .swiper-container', {
+                autoHeight: true,
+                observer: true,
+                observeParents: true,
+                autoplay: true,
+                pagination: {
+                    el: '.picture .swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            var Swiper3 = new Swiper('.doctors .swiper-container', {
+                simulateTouch: false,
+                observer: true,
+                observeParents: true,
+                autoplay: {
+                    delay: 5000,
+                },
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: '.doctors .swiper-button-next',
+                    prevEl: '.doctors .swiper-button-prev',
+                },
+            });
+        });
+
+    </script>
+</body>
+
+</html>
